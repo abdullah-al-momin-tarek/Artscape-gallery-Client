@@ -1,6 +1,7 @@
 import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -9,6 +10,7 @@ import auth from "../../firebase/firebase.config";
 // or via CommonJS
 
 const Register = () => {
+  const [show, setShow] = useState(true);
   const {
     register,
     handleSubmit,
@@ -122,7 +124,7 @@ const Register = () => {
             />
             {errors.email && <p className="text-red-600">Email is required.</p>}
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm relative">
             <label htmlFor="password" className="block dark:text-gray-600">
               Password
             </label>
@@ -137,6 +139,12 @@ const Register = () => {
             {errors.password && (
               <p className="text-red-600">Password is required.</p>
             )}
+            <span
+              onClick={() => setShow(!show)}
+              className="absolute right-2 top-8 text-xl hover:cursor-pointer"
+            >
+              {show ? <FaEyeSlash /> : <FaEye />}
+            </span>
             <div className="flex justify-end text-xs dark:text-gray-600"></div>
           </div>
           <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-orange-500">

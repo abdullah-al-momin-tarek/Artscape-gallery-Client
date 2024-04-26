@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaGithub } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -14,6 +14,7 @@ const Login = () => {
   } = useForm();
 
   const { loginUser, google, github } = useContext(AuthContext);
+  const [show, setShow] = useState(true);
 
   const handleLogin = (data) => {
     const { email, password } = data;
@@ -72,12 +73,12 @@ const Login = () => {
             />
             {errors.email && <p className="text-red-600">Email is required.</p>}
           </div>
-          <div className="space-y-1 text-sm">
+          <div className="space-y-1 text-sm relative">
             <label htmlFor="password" className="block dark:text-gray-600">
               Password
             </label>
             <input
-              type="password"
+              type={show ? "text" : "password"}
               name="password"
               placeholder="Password"
               {...register("password", { required: true })}
@@ -91,6 +92,12 @@ const Login = () => {
                 Forgot Password?
               </a>
             </div>
+            <span
+              onClick={() => setShow(!show)}
+              className="absolute right-2 top-8 text-xl hover:cursor-pointer"
+            >
+              {show ? <FaEyeSlash /> : <FaEye />}
+            </span>
           </div>
           <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-orange-500">
             Sign in
