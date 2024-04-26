@@ -1,5 +1,9 @@
+import { updateProfile } from "firebase/auth";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import auth from "../../firebase/firebase.config";
 
 const Register = () => {
   const {
@@ -7,15 +11,36 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const { registerUser } = useContext(AuthContext);
 
   const handleRegister = (data) => {
     const { name, photo, email, password } = data;
-    console.log(name, photo, email, password);
+    console.log(email, password);
+    registerUser(email, password)
+      .then(() => {
+        updateProfile(auth.currentUser, {
+          displayName: name,
+          photoURL: photo,
+        })
+          .then(() => console.log("UserName set succesfull"))
+          .catch((error) => console.error(error));
+
+        // toast.success("Successfully registered");
+        // Navigate(location?.state ? location.state : "/");
+        console.log("registerd Successfull");
+      })
+      .catch((error) => {
+        // if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+        //   //   toast.error("Email Already In use");
+        //   console.log("Email already use");
+        // }
+        console.error(error);
+      });
   };
   return (
-    <div className="flex justify-center items-center border h-screen">
+    <div className="flex justify-center items-center  h-screen">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-md shadow-blue-600">
-        <h1 className="text-2xl font-bold text-center">Login</h1>
+        <h1 className="text-2xl font-bold text-center">Register Now</h1>
         <form
           noValidate=""
           action=""
@@ -75,21 +100,17 @@ const Register = () => {
             {errors.password && (
               <p className="text-red-600">Name is required.</p>
             )}
-            <div className="flex justify-end text-xs dark:text-gray-600">
-              <a rel="noopener noreferrer" href="#">
-                Forgot Password?
-              </a>
-            </div>
+            <div className="flex justify-end text-xs dark:text-gray-600"></div>
           </div>
           <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">
-            Sign in
+            Register
           </button>
         </form>
 
         <p className="text-xs text-center sm:px-6 dark:text-gray-600">
-          Do not have an account?
-          <Link className="link-primary" to="/register">
-            Register
+          Already have an account?
+          <Link className="link-primary" to="/login">
+            Login
           </Link>
         </p>
       </div>
