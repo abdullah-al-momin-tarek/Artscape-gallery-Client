@@ -2,7 +2,7 @@ import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import auth from "../../firebase/firebase.config";
@@ -11,6 +11,9 @@ import auth from "../../firebase/firebase.config";
 
 const Register = () => {
   const [show, setShow] = useState(true);
+  // Navigate
+  const navigate = useNavigate();
+  const location = useLocation();
   const {
     register,
     handleSubmit,
@@ -57,7 +60,7 @@ const Register = () => {
         });
 
         // toast.success("Successfully registered");
-        Navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
         console.log("registerd Successfull");
       })
       .catch((error) => {

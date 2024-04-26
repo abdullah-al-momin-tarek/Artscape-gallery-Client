@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -15,6 +15,9 @@ const Login = () => {
 
   const { loginUser, google, github } = useContext(AuthContext);
   const [show, setShow] = useState(true);
+  // Navigate
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = (data) => {
     const { email, password } = data;
@@ -29,6 +32,7 @@ const Login = () => {
         showConfirmButton: false,
         timer: 1500,
       });
+      navigate(location?.state ? location.state : "/");
     });
   };
 
@@ -44,6 +48,7 @@ const Login = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.error(error);
