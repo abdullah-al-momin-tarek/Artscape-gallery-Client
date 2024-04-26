@@ -68,7 +68,7 @@ const Login = () => {
               name="email"
               placeholder="Email"
               {...register("email", { required: true })}
-              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-100 dark:text-gray-800 focus:dark:border-violet-600"
             />
             {errors.email && <p className="text-red-600">Email is required.</p>}
           </div>
@@ -81,7 +81,7 @@ const Login = () => {
               name="password"
               placeholder="Password"
               {...register("password", { required: true })}
-              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
+              className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-100 dark:text-gray-800 focus:dark:border-violet-600"
             />
             {errors.password && (
               <p className="text-red-600">Password is required.</p>
@@ -92,7 +92,7 @@ const Login = () => {
               </a>
             </div>
           </div>
-          <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">
+          <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-orange-500">
             Sign in
           </button>
         </form>

@@ -1,5 +1,5 @@
 import { updateProfile } from "firebase/auth";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -15,30 +15,47 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const { registerUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleRegister = (data) => {
     const { name, photo, email, password } = data;
     console.log(email, password);
+
+    setError("");
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 character");
+      return;
+    }
+    if (!/.*[a-z].*/.test(password)) {
+      setError("Password must have an lowercase");
+      return;
+    }
+    if (!/.*[A-Z].*/.test(password)) {
+      setError("Password must have an Uppercase");
+      return;
+    }
+
     registerUser(email, password)
       .then(() => {
         updateProfile(auth.currentUser, {
           displayName: name,
           photoURL: photo,
         })
-          .then((data) => console.log("UserName set succesfull"))
+          .then(() => console.log("username set successful"))
           .catch((error) => console.error(error));
 
         Swal.fire({
           position: "center",
           icon: "success",
           title: "Register successful",
-          text: `Welcome ${data?.user?.displayName}`,
+          // text: `Welcome ${data?.user?.displayName}`,
           showConfirmButton: false,
           timer: 1500,
         });
 
         // toast.success("Successfully registered");
-        // Navigate(location?.state ? location.state : "/");
+        Navigate(location?.state ? location.state : "/");
         console.log("registerd Successfull");
       })
       .catch((error) => {
@@ -116,12 +133,13 @@ const Register = () => {
               {...register("password", { required: true })}
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
+            {error && <span className="text-red-600 text-sm">{error}</span>}
             {errors.password && (
-              <p className="text-red-600">Name is required.</p>
+              <p className="text-red-600">Password is required.</p>
             )}
             <div className="flex justify-end text-xs dark:text-gray-600"></div>
           </div>
-          <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">
+          <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 bg-orange-500">
             Register
           </button>
         </form>

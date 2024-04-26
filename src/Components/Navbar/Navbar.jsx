@@ -1,21 +1,44 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const { users, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Logout successful",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => console.log(error.message));
+  };
+
   const links = (
     <>
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Login</NavLink>
-      </li>
-      <li>
-        <NavLink to="/register">Register</NavLink>
-      </li>
+      {!users && (
+        <>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar  bg-base-300 rounded-b-md">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,13 +64,33 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <Link
+          to="/"
+          className="btn btn-ghost md:text-2xl font-bold text-orange-700"
+        >
+          ARTESCAPE{" "}
+          <span className="bg-gradient-to-r from-blue-600 to-orange-600 inline-block text-transparent bg-clip-text">
+            {" "}
+            GALLERY
+          </span>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {users ? (
+          <button
+            onClick={handleLogout}
+            className="btn bg-orange-500 text-white"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="btn bg-orange-500 text-white">Login</button>
+          </Link>
+        )}
       </div>
     </div>
   );
