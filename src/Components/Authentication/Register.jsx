@@ -2,8 +2,11 @@ import { updateProfile } from "firebase/auth";
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import auth from "../../firebase/firebase.config";
+
+// or via CommonJS
 
 const Register = () => {
   const {
@@ -22,18 +25,34 @@ const Register = () => {
           displayName: name,
           photoURL: photo,
         })
-          .then(() => console.log("UserName set succesfull"))
+          .then((data) => console.log("UserName set succesfull"))
           .catch((error) => console.error(error));
+
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Register successful",
+          text: `Welcome ${data?.user?.displayName}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
 
         // toast.success("Successfully registered");
         // Navigate(location?.state ? location.state : "/");
         console.log("registerd Successfull");
       })
       .catch((error) => {
-        // if (error.message === "Firebase: Error (auth/email-already-in-use).") {
-        //   //   toast.error("Email Already In use");
-        //   console.log("Email already use");
-        // }
+        if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+          //   toast.error("Email Already In use");
+          Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "Email Already In use",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+          console.log("Email already use");
+        }
         console.error(error);
       });
   };

@@ -1,14 +1,64 @@
-import React from "react";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const { loginUser, google, github } = useContext(AuthContext);
+
+  const handleLogin = (data) => {
+    const { email, password } = data;
+
+    loginUser(email, password).then((data) => {
+      console.log(data);
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Login Successful",
+        text: `welcome back ${data?.user?.displayName}`,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
+  };
+
+  const handleGoogle = () => {
+    google()
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Login Successful",
+          text: `welcome ${data?.user?.displayName}`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-md shadow-blue-600">
         <h1 className="text-2xl font-bold text-center">Login</h1>
-        <form noValidate="" action="" className="space-y-6">
+        <form
+          noValidate=""
+          action=""
+          className="space-y-6"
+          onSubmit={handleSubmit(handleLogin)}
+        >
           <div className="space-y-1 text-sm">
             <label htmlFor="username" className="block dark:text-gray-600">
               Email
@@ -17,8 +67,10 @@ const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
+              {...register("email", { required: true })}
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
+            {errors.email && <p className="text-red-600">Email is required.</p>}
           </div>
           <div className="space-y-1 text-sm">
             <label htmlFor="password" className="block dark:text-gray-600">
@@ -28,8 +80,12 @@ const Login = () => {
               type="password"
               name="password"
               placeholder="Password"
+              {...register("password", { required: true })}
               className="w-full px-4 py-3 rounded-md dark:border-gray-300 dark:bg-gray-50 dark:text-gray-800 focus:dark:border-violet-600"
             />
+            {errors.password && (
+              <p className="text-red-600">Password is required.</p>
+            )}
             <div className="flex justify-end text-xs dark:text-gray-600">
               <a rel="noopener noreferrer" href="#">
                 Forgot Password?
@@ -49,6 +105,7 @@ const Login = () => {
         </div>
         <div className="flex justify-center space-x-">
           <button
+            onClick={handleGoogle}
             aria-label="Log in with Google"
             className="p-3 rounded-sm text-3xl"
           >
