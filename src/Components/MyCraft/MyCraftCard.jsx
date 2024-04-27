@@ -28,6 +28,8 @@ const MyCraftCard = ({ craft, card, setCard }) => {
                 title: "Deleted!",
                 text: "Your card has been deleted.",
                 icon: "success",
+                showConfirmButton: false,
+                timer: 1000,
               });
               const remaining = card.filter((d) => d._id !== _id);
               setCard(remaining);
@@ -67,7 +69,7 @@ const MyCraftCard = ({ craft, card, setCard }) => {
               </p>
             </div>
             <div className="join join-vertical space-y-3">
-              <Link>
+              <Link to={`/updateMyCraft/${_id}`}>
                 <button className="btn join-item bg-orange-500 text-white w-full">
                   <FaEdit />
                   Update

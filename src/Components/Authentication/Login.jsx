@@ -46,7 +46,26 @@ const Login = () => {
           title: "Login Successful",
           text: `welcome ${data?.user?.displayName}`,
           showConfirmButton: false,
-          timer: 1500,
+          timer: 1000,
+        });
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const handleGithub = () => {
+    github()
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Login Successful",
+          text: `welcome ${data?.user?.displayName}`,
+          showConfirmButton: false,
+          timer: 1000,
         });
         navigate(location?.state ? location.state : "/");
       })
@@ -124,6 +143,7 @@ const Login = () => {
             <FcGoogle />
           </button>
           <button
+            onClick={handleGithub}
             aria-label="Log in with GitHub"
             className="p-3 rounded-sm text-3xl"
           >
