@@ -11,16 +11,43 @@ const AddCraft = () => {
   } = useForm();
 
   const handleAdd = (data) => {
-    console.log(data);
+    const { email, displayName } = users;
+
     const {
+      image,
+      item_name,
+      subcategory_name,
+      short_description,
+      processing_time,
+      customization,
+      price,
+      rating,
+      stock_status,
+    } = data;
+
+    const items = {
       image,
       item_name,
       subcategory_name,
       short_description,
       price,
       rating,
+      customization,
+      processing_time,
       stock_status,
-    } = data;
+      email,
+      displayName,
+    };
+
+    fetch("http://localhost:5000/craft", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(items),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   };
 
   return (
@@ -89,6 +116,7 @@ const AddCraft = () => {
                   <span className="label-text">Short Description</span>
                 </div>
                 <textarea
+                  rows="4"
                   className="textarea textarea-warning"
                   placeholder="Short Description"
                   {...register("short_description", { required: true })}
@@ -142,6 +170,21 @@ const AddCraft = () => {
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                 </select>
+              </label>
+
+              <label className="form-control w-full max-w-xs">
+                <div className="label">
+                  <span className="label-text">Processing Time</span>
+                </div>
+                <input
+                  type="text"
+                  placeholder="Processing Time"
+                  {...register("processing_time", { required: true })}
+                  className="input input-bordered input-warning w-full max-w-xs"
+                />
+                {errors.processing_time && (
+                  <p className="text-red-600">Processing Time is required.</p>
+                )}
               </label>
 
               <label className="form-control w-full max-w-xs">
