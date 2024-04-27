@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateMyCraft = () => {
@@ -21,7 +21,10 @@ const UpdateMyCraft = () => {
     price,
     rating,
     stock_status,
+    email,
   } = card;
+
+  const navigate = useNavigate();
 
   const handleUpdate = (data) => {
     fetch(`http://localhost:5000/updateCraft/${_id}`, {
@@ -41,6 +44,7 @@ const UpdateMyCraft = () => {
             showConfirmButton: false,
             timer: 1000,
           });
+          navigate(`/myCraft/${email}`);
         }
       });
   };
