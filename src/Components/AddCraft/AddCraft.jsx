@@ -11,7 +11,7 @@ const AddCraft = () => {
   } = useForm();
 
   const handleAdd = (data) => {
-    const { email, displayName } = users;
+    const { email, displayName, photoURL } = users;
 
     const {
       image,
@@ -37,6 +37,7 @@ const AddCraft = () => {
       stock_status,
       email,
       displayName,
+      photoURL,
     };
 
     fetch("http://localhost:5000/craft", {
