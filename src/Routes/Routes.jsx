@@ -3,6 +3,7 @@ import AddCraft from "../Components/AddCraft/AddCraft";
 import AllCraft from "../Components/AllCraft/AllCraft";
 import Login from "../Components/Authentication/Login";
 import Register from "../Components/Authentication/Register";
+import CardDetails from "../Components/CardDetails/CardDetails";
 import Home from "../Components/Home/Home";
 import Mycraft from "../Components/MyCraft/Mycraft";
 import ErrorElement from "../ErrorElement/ErrorElement";
@@ -29,11 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/allCraft",
-        element: (
-          <PrivateRoute>
-            <AllCraft />
-          </PrivateRoute>
-        ),
+        element: <AllCraft />,
         loader: () => fetch("http://localhost:5000/allCraft"),
       },
       {
@@ -45,12 +42,24 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "/myCraft",
+        path: "/myCraft/:email",
         element: (
           <PrivateRoute>
             <Mycraft />
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/myCraft/${params.email}`),
+      },
+      {
+        path: "/craftDetails/:id",
+        element: (
+          <PrivateRoute>
+            <CardDetails />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/craftDetails/${params.id}`),
       },
     ],
   },

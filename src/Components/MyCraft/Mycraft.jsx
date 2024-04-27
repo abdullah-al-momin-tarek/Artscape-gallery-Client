@@ -1,7 +1,12 @@
+import { useLoaderData } from "react-router-dom";
+
 const Mycraft = () => {
+  const data = useLoaderData();
+  console.log(data);
+
   return (
     <div>
-      <h2>This is my craft</h2>
+      <h2>My email: {data.email}</h2>
     </div>
   );
 };

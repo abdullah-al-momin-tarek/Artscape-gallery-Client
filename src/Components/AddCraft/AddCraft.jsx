@@ -168,8 +168,8 @@ const AddCraft = () => {
                   name="dropdown"
                   {...register("customization")}
                 >
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
                 </select>
               </label>
 
