@@ -6,6 +6,7 @@ import Register from "../Components/Authentication/Register";
 import CardDetails from "../Components/CardDetails/CardDetails";
 import Home from "../Components/Home/Home";
 import Mycraft from "../Components/MyCraft/Mycraft";
+import UpdateMyCraft from "../Components/MyCraft/UpdateMyCraft";
 import ErrorElement from "../ErrorElement/ErrorElement";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Root from "../Root/Root";
@@ -60,6 +61,14 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/craftDetails/${params.id}`),
+      },
+      {
+        path: "/updateMyCraft",
+        element: (
+          <PrivateRoute>
+            <UpdateMyCraft />
+          </PrivateRoute>
+        ),
       },
     ],
   },

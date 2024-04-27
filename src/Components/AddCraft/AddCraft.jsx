@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const AddCraft = () => {
@@ -48,7 +49,17 @@ const AddCraft = () => {
       body: JSON.stringify(items),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Item Added Successfully",
+            showConfirmButton: false,
+            timer: 1000,
+          });
+        }
+      });
   };
 
   return (

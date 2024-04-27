@@ -32,7 +32,7 @@ const Navbar = () => {
         <NavLink to="/addCraft">Add Craft Item</NavLink>
       </li>
       <li>
-        <NavLink to={`/myCraft/${users.email}`}>My Art & Craft List</NavLink>
+        <NavLink to={`/myCraft/${users?.email}`}>My Art & Craft List</NavLink>
       </li>
 
       {!users && (
