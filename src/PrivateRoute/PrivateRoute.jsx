@@ -1,5 +1,7 @@
+import Lottie from "lottie-react";
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
+import spinner from "../../spinner.json";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const PrivateRoute = ({ children }) => {
@@ -14,7 +16,8 @@ const PrivateRoute = ({ children }) => {
   if (loader) {
     return (
       <div className="flex justify-center items-center">
-        <span className="loading loading-spinner loading-lg"></span>
+        {/* <span className="loading loading-spinner loading-lg"></span> */}
+        <Lottie animationData={spinner} />
       </div>
     );
   }
