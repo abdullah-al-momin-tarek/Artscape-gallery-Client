@@ -10,7 +10,8 @@ const Root = () => {
         {" "}
         <Outlet />
       </div>
-      <div className="mt-12">
+
+      <div className="">
         <Footer />
       </div>
     </div>

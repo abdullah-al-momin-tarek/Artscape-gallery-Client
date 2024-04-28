@@ -26,7 +26,7 @@ const CraftCard = ({ craft }) => {
             src={photoURL}
             className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500"
           />
-          <p className="bg-orange-500 text-white px-2 rounded-xl absolute top-20 left-[300px] w-32 text-center">
+          <p className="bg-orange-500 text-white px-2 rounded-xl absolute top-20  w-32 text-center">
             {stock_status}
           </p>
         </div>

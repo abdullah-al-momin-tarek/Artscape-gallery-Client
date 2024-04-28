@@ -151,7 +151,7 @@ const UpdateMyCraft = () => {
                   <span className="label-text">Rating</span>
                 </div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Rating"
                   defaultValue={rating}
                   {...register("rating", { required: true })}
@@ -183,7 +183,7 @@ const UpdateMyCraft = () => {
                   <span className="label-text">Processing Time</span>
                 </div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Processing Time"
                   defaultValue={processing_time}
                   {...register("processing_time", { required: true })}

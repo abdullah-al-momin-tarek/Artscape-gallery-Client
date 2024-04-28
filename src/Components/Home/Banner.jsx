@@ -16,8 +16,8 @@ const Banner = () => {
       spaceBetween={50}
       slidesPerView={1}
       navigation
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log("slide change")}
+      // onSwiper={(swiper) => console.log(swiper)}
       autoplay={{
         delay: 4000,
         disableOnInteraction: false,

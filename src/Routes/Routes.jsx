@@ -4,6 +4,7 @@ import AllCraft from "../Components/AllCraft/AllCraft";
 import Login from "../Components/Authentication/Login";
 import Register from "../Components/Authentication/Register";
 import CardDetails from "../Components/CardDetails/CardDetails";
+import CategoryAllCraft from "../Components/Home/CategoryAllCraft";
 import Home from "../Components/Home/Home";
 import Mycraft from "../Components/MyCraft/Mycraft";
 import UpdateMyCraft from "../Components/MyCraft/UpdateMyCraft";
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:5000/allCraft"),
       },
       {
         path: "/login",
@@ -71,6 +73,18 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/craftDetails/${params.id}`),
+      },
+      {
+        path: "/subCategoryItem/:subcategory_name",
+        element: (
+          <PrivateRoute>
+            <CategoryAllCraft />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/categoryCraft/${params.subcategory_name}`
+          ),
       },
     ],
   },
