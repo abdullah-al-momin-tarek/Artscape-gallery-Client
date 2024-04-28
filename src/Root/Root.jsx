@@ -13,7 +13,7 @@ const Root = () => {
         <Outlet />
       </div>
 
-      <div className="mt-12 light:bg-gray-50 ">
+      <div className="mt-12 bg-black text-white ">
         <Footer />
       </div>
     </div>
