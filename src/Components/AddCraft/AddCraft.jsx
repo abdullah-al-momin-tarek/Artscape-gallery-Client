@@ -63,12 +63,12 @@ const AddCraft = () => {
   };
 
   return (
-    <div className="h-screen mt-12 mb-96">
+    <div className=" mt-12 mb-96">
       <form onSubmit={handleSubmit(handleAdd)} className="">
-        <div className="border-yellow-500 h-screen md:flex items-center md:justify-center flex-col ">
-          <div className="bg-orange-50 p-5 w-full md:w-2/3 md:p-5 text-center flex flex-col items-center py-5 rounded-lg">
+        <div className=" md:flex items-center md:justify-center flex-col ">
+          <div className=" p-5 w-full md:w-2/3 md:p-5 text-center flex flex-col items-center py-5 rounded-lg">
             <h2 className="text-3xl font-bold">Add Craft Item</h2>
-            <div className="flex flex-col md:flex-row md:justify-between w-ful border lg:w-1/2 md:gap-5">
+            <div className="flex flex-col md:flex-row md:justify-between w-ful  lg:w-1/2 md:gap-5">
               <div className=" w-full">
                 <label className="form-control w-full max-w-xs">
                   <div className="label">

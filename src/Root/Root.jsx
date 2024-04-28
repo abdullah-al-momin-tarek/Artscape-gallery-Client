@@ -4,14 +4,16 @@ import Footer from "../Footer/Footer";
 
 const Root = () => {
   return (
-    <div className="container mx-auto">
-      <Navbar />
-      <div className="mt-12">
+    <div>
+      <div className="container mx-auto">
+        <Navbar />
+      </div>
+      <div className="mt-12 container mx-auto">
         {" "}
         <Outlet />
       </div>
 
-      <div className="">
+      <div className="mt-12 light:bg-gray-50">
         <Footer />
       </div>
     </div>

@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="px-4 mt-12 divide-y dark:bg-gray-100 dark:text-gray-800">
+    <footer className="px-4 divide-y">
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="lg:w-1/3">
           <a
@@ -18,9 +18,7 @@ const Footer = () => {
         </div>
         <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase dark:text-gray-900">
-              Product
-            </h3>
+            <h3 className="tracking-wide uppercase">Product</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -45,9 +43,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="tracking-wide uppercase dark:text-gray-900">
-              Company
-            </h3>
+            <h3 className="tracking-wide uppercase">Company</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -62,7 +58,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <h3 className="uppercase dark:text-gray-900">Developers</h3>
+            <h3 className="uppercase">Developers</h3>
             <ul className="space-y-1">
               <li>
                 <a rel="noopener noreferrer" href="#">
@@ -82,7 +78,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="space-y-3">
-            <div className="uppercase dark:text-gray-900">Social media</div>
+            <div className="uppercase">Social media</div>
             <div className="flex justify-start space-x-3">
               <a
                 rel="noopener noreferrer"
@@ -132,7 +128,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center dark:text-gray-600">
+      <div className="py-6 text-sm text-center">
         © 2024 Artscape Gallery All rights reserved.
       </div>
     </footer>

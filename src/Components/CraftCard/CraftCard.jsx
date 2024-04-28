@@ -18,7 +18,7 @@ const CraftCard = ({ craft }) => {
     photoURL,
   } = craft;
   return (
-    <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md shadow-orange-400 dark:bg-orange-50 dark:text-gray-800">
+    <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md shadow-orange-400 ">
       <div className="flex space-x-4">
         <div className="relative">
           <img

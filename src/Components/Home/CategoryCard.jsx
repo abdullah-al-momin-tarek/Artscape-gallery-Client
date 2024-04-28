@@ -4,7 +4,7 @@ const CategoryCard = ({ card }) => {
   const { subcategory_name, image, difficulty, description, materials } = card;
   return (
     <Link to={`/subCategoryItem/${subcategory_name}`}>
-      <div className="max-w-lg p-4 shadow-md  dark:bg-fuchsia-50 rounded-xl p-5 dark:text-gray-800">
+      <div className="max-w-lg  shadow-md  rounded-xl p-5 shadow-orange-400">
         <div className="space-y-4">
           <div className="space-y-2">
             <img
