@@ -65,7 +65,7 @@ const MyCraftCard = ({ craft, card, setCard }) => {
               </p>
               <p>
                 <span className="font-bold">Customization:</span>{" "}
-                {customization}$
+                {customization}
               </p>
             </div>
             <div className="join join-vertical space-y-3">

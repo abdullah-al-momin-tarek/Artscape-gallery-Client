@@ -189,7 +189,7 @@ const AddCraft = () => {
                   <span className="label-text">Processing Time</span>
                 </div>
                 <input
-                  type="text"
+                  type="number"
                   placeholder="Processing Time"
                   {...register("processing_time", { required: true })}
                   className="input input-bordered input-warning w-full max-w-xs"
