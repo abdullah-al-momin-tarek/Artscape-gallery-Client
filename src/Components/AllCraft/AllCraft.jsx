@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import CraftCard from "../CraftCard/CraftCard";
 
@@ -6,6 +7,9 @@ const AllCraft = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>All Art & Craft Item</title>
+      </Helmet>
       <h1 className="text-3xl font-bold text-center mb-12">
         All Art & Craft Item
       </h1>

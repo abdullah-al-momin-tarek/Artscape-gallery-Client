@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -64,6 +65,9 @@ const AddCraft = () => {
 
   return (
     <div className=" mt-12 mb-96">
+      <Helmet>
+        <title>Add Craft Item</title>
+      </Helmet>
       <form onSubmit={handleSubmit(handleAdd)} className="">
         <div className=" md:flex items-center md:justify-center flex-col ">
           <div className=" p-5 w-full md:w-2/3 md:p-5 text-center flex flex-col items-center py-5 rounded-lg">

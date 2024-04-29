@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -76,6 +77,9 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
+      <Helmet>
+        <title>Login</title>
+      </Helmet>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-md shadow-blue-600">
         <h1 className="text-2xl font-bold text-center">Login</h1>
         <form

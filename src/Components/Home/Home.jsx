@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import CraftCard from "../CraftCard/CraftCard";
 import Banner from "./Banner";
@@ -16,6 +17,9 @@ const Home = () => {
   console.log("data", allCraft);
   return (
     <div>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <Banner />
 
       {/* Exploring */}

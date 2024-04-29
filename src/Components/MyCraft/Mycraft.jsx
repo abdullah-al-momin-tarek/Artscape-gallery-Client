@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import MyCraftCard from "./MyCraftCard";
 
@@ -25,6 +26,9 @@ const Mycraft = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>My Art & Craft List</title>
+      </Helmet>
       <h2 className="font-bold text-3xl text-center">My Added Art & Crafted</h2>
       <div className="mt-5 mb-5 flex items-center gap-3 justify-center">
         <p className="pt-3">Customization</p>

@@ -1,5 +1,6 @@
 import { updateProfile } from "firebase/auth";
 import { useContext, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -80,6 +81,9 @@ const Register = () => {
   };
   return (
     <div className="flex justify-center items-center  h-screen">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="w-full max-w-md p-8 space-y-3 rounded-xl shadow-md shadow-blue-600">
         <h1 className="text-2xl font-bold text-center">Register Now</h1>
         <form
