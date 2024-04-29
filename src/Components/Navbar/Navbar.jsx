@@ -8,23 +8,11 @@ const Navbar = () => {
   const { users, logOut } = useContext(AuthContext);
   const [theme, setTheme] = useState("light");
 
-  // useEffect(() => {
-  //   document.querySelector("html").setAttribute("data-theme", theme);
-  // }, [theme]);
-
   useEffect(() => {
     const local = localStorage.getItem("theme");
     setTheme(local);
     document.querySelector("html").setAttribute("data-theme", local);
   }, [theme]);
-
-  // const handleTheme = (e) => {
-  //   if (e.target.checked) {
-  //     setTheme("dark");
-  //   } else {
-  //     setTheme("light");
-  //   }
-  // };
 
   const handleTheme = (e) => {
     if (e.target.checked) {
