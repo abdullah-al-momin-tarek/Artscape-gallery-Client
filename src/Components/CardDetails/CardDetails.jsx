@@ -21,7 +21,7 @@ const CardDetails = () => {
   } = data;
 
   return (
-    <div className="bg-orange-50 mt-12 rounded-xl">
+    <div className=" mt-12 rounded-xl bg-base-300">
       {/* <BannerDetails title={item_name} image={image}></BannerDetails> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 p-5 items-center">
