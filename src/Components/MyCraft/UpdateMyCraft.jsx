@@ -151,7 +151,7 @@ const UpdateMyCraft = () => {
                   <span className="label-text">Rating</span>
                 </div>
                 <input
-                  type="number"
+                  type="text"
                   placeholder="Rating"
                   defaultValue={rating}
                   {...register("rating", { required: true })}

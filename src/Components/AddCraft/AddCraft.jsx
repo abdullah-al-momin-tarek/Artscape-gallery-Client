@@ -163,7 +163,7 @@ const AddCraft = () => {
                     <span className="label-text">Rating</span>
                   </div>
                   <input
-                    type="number"
+                    type="text"
                     placeholder="Rating"
                     {...register("rating", { required: true })}
                     className="input input-bordered input-warning w-full max-w-xs"
