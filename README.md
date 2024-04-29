@@ -1,8 +1,17 @@
-# React + Vite
+[Artscape Gallery](https://artscape-gallery.web.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Category Name: Painting and Drawing
 
-Currently, two official plugins are available:
+Feature
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-This website has dark theme option where user can use this website with their prefferable theme.
+-User can see All Art & Craft item without login.
+-User can see craft card details and own added item card after login.
+-User can edit & delete their own added card.
+-This website Items are category wise. User can see only their favorite subcategory item using filter option.
+
+-Challenges Package
+
+-Lottie React.
+-React simple Typewriter.
+-React Tooltip.
