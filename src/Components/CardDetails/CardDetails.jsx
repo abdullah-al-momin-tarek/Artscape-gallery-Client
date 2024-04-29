@@ -5,7 +5,6 @@ const CardDetails = () => {
   const data = useLoaderData();
   console.log(data);
   const {
-    _id,
     image,
     item_name,
     subcategory_name,
@@ -22,8 +21,6 @@ const CardDetails = () => {
 
   return (
     <div className=" mt-12 rounded-xl bg-base-300">
-      {/* <BannerDetails title={item_name} image={image}></BannerDetails> */}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-8 p-5 items-center">
         <div>
           <img

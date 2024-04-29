@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useLoaderData } from "react-router-dom";
 import CraftCard from "../CraftCard/CraftCard";
 
@@ -15,6 +16,10 @@ const CategoryAllCraft = ({ params }) => {
       </div>
     </div>
   );
+};
+
+CategoryAllCraft.propTypes = {
+  params: PropTypes.any,
 };
 
 export default CategoryAllCraft;

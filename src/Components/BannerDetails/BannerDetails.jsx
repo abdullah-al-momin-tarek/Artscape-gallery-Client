@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 const BannerDetails = ({ title, image }) => {
   return (
     <div
@@ -13,6 +14,10 @@ const BannerDetails = ({ title, image }) => {
       </div>
     </div>
   );
+};
+BannerDetails.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
 };
 
 export default BannerDetails;

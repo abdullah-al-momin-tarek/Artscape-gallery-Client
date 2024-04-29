@@ -13,8 +13,6 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setCategoryCard(data));
   }, []);
-  console.log(categoryCard);
-  console.log("data", allCraft);
   return (
     <div>
       <Helmet>

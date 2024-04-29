@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FaRegStar } from "react-icons/fa";
 import { IoMdTime } from "react-icons/io";
 import { Link } from "react-router-dom";
@@ -11,7 +12,6 @@ const CraftCard = ({ craft }) => {
     short_description,
     price,
     rating,
-    customization,
     processing_time,
     stock_status,
     displayName,
@@ -73,6 +73,10 @@ const CraftCard = ({ craft }) => {
       </div>
     </div>
   );
+};
+
+CraftCard.propTypes = {
+  craft: PropTypes.object,
 };
 
 export default CraftCard;

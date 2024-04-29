@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { FaEdit } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -91,6 +92,12 @@ const MyCraftCard = ({ craft, card, setCard }) => {
       </div>
     </div>
   );
+};
+
+MyCraftCard.propTypes = {
+  craft: PropTypes.object,
+  card: PropTypes.array,
+  setCard: PropTypes.any,
 };
 
 export default MyCraftCard;
