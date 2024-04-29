@@ -21,74 +21,66 @@ const Home = () => {
       {/* Exploring */}
       <section className="p-4 lg:p-8 mt-12">
         <div className="container mx-auto space-y-12">
-          <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+          <div className="flex flex-col overflow-hidden rounded-md shadow-md shadow-orange-500  lg:flex-row">
             <img
-              src="https://source.unsplash.com/640x480/?1"
-              alt=""
-              className="h-80 dark:bg-gray-500 aspect-video"
+              src="https://i.ibb.co/0MFf3Kj/landscape-k.jpg"
+              alt="Landscape Painting"
+              className="h-80 aspect-video"
             />
             <div className="flex flex-col justify-center flex-1 p-6 bg-base-200">
-              <span className="text-xs uppercase dark:text-gray-600">
-                Join, its free
-              </span>
+              <span className="text-xs uppercase">Join, it is free</span>
               <h3 className="text-3xl font-bold">
-                We are not reinventing the wheel
+                Landscape Painting Collection
               </h3>
-              <p className="my-6 dark:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                aliquam possimus quas, error esse quos.
+              <p className="my-6 ">
+                Explore our collection of stunning landscape paintings,
+                featuring breathtaking mountain views and serene forest scenes.
               </p>
-              <button type="button" className="self-start">
-                Action
-              </button>
+              {/* <button type="button" className="self-start">
+                View Collection
+              </button> */}
             </div>
           </div>
-          <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row-reverse">
+          <div className="flex flex-col overflow-hidden rounded-md shadow-md shadow-orange-500 lg:flex-row-reverse">
             <img
-              src="https://source.unsplash.com/640x480/?2"
-              alt=""
-              className="h-80 dark:bg-gray-500 aspect-video"
+              src="https://i.ibb.co/RTph0L1/portrait.jpg"
+              alt="Portrait Drawing"
+              className="h-80  aspect-video"
             />
-            <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-              <span className="text-xs uppercase dark:text-gray-600">
-                Join, it's free
-              </span>
-              <h3 className="text-3xl font-bold">
-                We're not reinventing the wheel
-              </h3>
-              <p className="my-6 dark:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                aliquam possimus quas, error esse quos.
+            <div className="flex flex-col justify-center flex-1 p-6 ">
+              <span className="text-xs uppercase">Join, it is free</span>
+              <h3 className="text-3xl font-bold">Portrait Drawing Selection</h3>
+              <p className="my-6 ">
+                Discover our range of portrait drawings, including detailed
+                pencil sketches and vibrant acrylic portraits.
               </p>
-              <button type="button" className="self-start">
-                Action
-              </button>
+              {/* <button type="button" className="self-start">
+                Explore Now
+              </button> */}
             </div>
           </div>
-          <div className="flex flex-col overflow-hidden rounded-md shadow-sm lg:flex-row">
+          <div className="flex flex-col overflow-hidden rounded-md shadow-md shadow-orange-500 lg:flex-row">
             <img
               src="https://source.unsplash.com/640x480/?3"
-              alt=""
-              className="h-80 dark:bg-gray-500 aspect-video"
+              alt="Watercolour Painting"
+              className="h-80  aspect-video"
             />
-            <div className="flex flex-col justify-center flex-1 p-6 dark:bg-gray-50">
-              <span className="text-xs uppercase dark:text-gray-600">
-                Join, it's free
-              </span>
-              <h3 className="text-3xl font-bold">
-                We're not reinventing the wheel
-              </h3>
-              <p className="my-6 dark:text-gray-600">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                aliquam possimus quas, error esse quos.
+            <div className="flex flex-col justify-center flex-1 p-6 ">
+              <span className="text-xs uppercase">Join, it is free</span>
+              <h3 className="text-3xl font-bold">Watercolour Art Collection</h3>
+              <p className="my-6">
+                Dive into our selection of vibrant watercolour paintings,
+                featuring exquisite floral compositions and captivating animal
+                portraits.
               </p>
-              <button type="button" className="self-start">
-                Action
-              </button>
+              {/* <button type="button" className="self-start ">
+                Browse Collection
+              </button> */}
             </div>
           </div>
         </div>
       </section>
+
       {/* exploring end */}
 
       <h2 className="text-3xl font-bold text-center mt-12">
