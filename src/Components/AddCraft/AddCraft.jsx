@@ -81,14 +81,10 @@ const AddCraft = () => {
                   <input
                     type="text"
                     placeholder="Image"
-                    {...register("image", { required: true })}
+                    {...register("image")}
                     className="input input-bordered input-warning w-full max-w-xs"
                   />
-                  {errors.image && (
-                    <p className="text-red-600">Image is required.</p>
-                  )}
                 </label>
-
                 <label className="form-control w-full max-w-xs">
                   <div className="label">
                     <span className="label-text">Item Name</span>

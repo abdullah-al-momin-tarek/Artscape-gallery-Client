@@ -43,7 +43,7 @@ const MyCraftCard = ({ craft, card, setCard }) => {
       <div className="space-y-4">
         <div className="space-y-2 relative">
           <img
-            src={image}
+            src={image ? image : "https://i.ibb.co/NV3y0QM/no-image.jpg"}
             alt=""
             className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
           />

@@ -19,7 +19,6 @@ const Navbar = () => {
       setTheme("light");
     }
   };
-  console.log(theme);
 
   const handleLogout = () => {
     logOut()

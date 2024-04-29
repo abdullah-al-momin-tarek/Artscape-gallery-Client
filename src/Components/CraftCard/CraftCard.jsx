@@ -23,7 +23,7 @@ const CraftCard = ({ craft }) => {
         <div className="relative">
           <img
             alt=""
-            src={photoURL}
+            src={photoURL ? photoURL : "https://i.ibb.co/NV3y0QM/no-image.jpg"}
             className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500"
           />
           <p className="bg-orange-500 text-white px-2 rounded-xl absolute top-20  w-32 text-center">
@@ -41,7 +41,7 @@ const CraftCard = ({ craft }) => {
       </div>
       <div>
         <img
-          src={image}
+          src={image ? image : "https://i.ibb.co/NV3y0QM/no-image.jpg"}
           alt=""
           className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500"
         />
