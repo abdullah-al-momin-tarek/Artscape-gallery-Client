@@ -10,6 +10,7 @@ const AddCraft = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const handleAdd = (data) => {
@@ -59,6 +60,7 @@ const AddCraft = () => {
             showConfirmButton: false,
             timer: 1000,
           });
+          reset();
         }
       });
   };
