@@ -39,22 +39,20 @@ const MyCraftCard = ({ craft, card, setCard }) => {
     });
   };
   return (
-    <div className="max-w-lg p-4 shadow-md dark:bg-gray-50 dark:text-gray-800">
+    <div className="max-w-lg p-4 shadow-md  rounded-xl shadow-orange-500 bg-base-200">
       <div className="space-y-4">
         <div className="space-y-2 relative">
           <img
             src={image ? image : "https://i.ibb.co/NV3y0QM/no-image.jpg"}
             alt=""
-            className="block object-cover object-center w-full rounded-md h-72 dark:bg-gray-500"
+            className="block object-cover object-center w-full rounded-md h-72"
           />
           <p className="bg-orange-500 px-2 w-32 rounded-xl text-center absolute top-0 right-3 text-white">
             {stock_status}
           </p>
         </div>
         <div className="space-y-2">
-          <h3 className="text-xl font-semibold dark:text-violet-600">
-            {item_name}
-          </h3>
+          <h3 className="text-xl font-semibold ">{item_name}</h3>
           <div className="flex justify-between">
             <div>
               <p>

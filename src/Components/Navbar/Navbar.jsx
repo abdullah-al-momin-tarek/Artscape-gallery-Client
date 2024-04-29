@@ -8,15 +8,33 @@ const Navbar = () => {
   const { users, logOut } = useContext(AuthContext);
   const [theme, setTheme] = useState("light");
 
+  // useEffect(() => {
+  //   document.querySelector("html").setAttribute("data-theme", theme);
+  // }, [theme]);
+
   useEffect(() => {
-    document.querySelector("html").setAttribute("data-theme", theme);
+    const local = localStorage.getItem("theme");
+    setTheme(local);
+    document.querySelector("html").setAttribute("data-theme", local);
   }, [theme]);
+
+  // const handleTheme = (e) => {
+  //   if (e.target.checked) {
+  //     setTheme("dark");
+  //   } else {
+  //     setTheme("light");
+  //   }
+  // };
 
   const handleTheme = (e) => {
     if (e.target.checked) {
-      setTheme("dark");
+      setTheme("synthwave");
+      localStorage.setItem("theme", "synthwave");
+      document.querySelector("html").setAttribute("data-theme", "synthwave");
     } else {
       setTheme("light");
+      localStorage.setItem("theme", "light");
+      document.querySelector("html").setAttribute("data-theme", "light");
     }
   };
 
@@ -108,6 +126,7 @@ const Navbar = () => {
           {/* this hidden checkbox controls the state */}
           <input
             onChange={handleTheme}
+            checked={theme == "light" ? false : true}
             type="checkbox"
             className="theme-controller"
           />
