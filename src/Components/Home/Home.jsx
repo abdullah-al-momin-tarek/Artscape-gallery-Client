@@ -61,7 +61,7 @@ const Home = () => {
           </div>
           <div className="flex flex-col overflow-hidden rounded-md shadow-md shadow-orange-500 lg:flex-row">
             <img
-              src="https://source.unsplash.com/640x480/?3"
+              src="https://i.ibb.co/fC5cjst/water-color-paint.webp"
               alt="Watercolour Painting"
               className="h-80  aspect-video"
             />
