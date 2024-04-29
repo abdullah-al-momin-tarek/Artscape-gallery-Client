@@ -8,7 +8,7 @@ const Home = () => {
   const allCraft = useLoaderData();
   const [categoryCard, setCategoryCard] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/categoryCard")
+    fetch("https://artscape-gallery-server.vercel.app/categoryCard")
       .then((res) => res.json())
       .then((data) => setCategoryCard(data));
   }, []);

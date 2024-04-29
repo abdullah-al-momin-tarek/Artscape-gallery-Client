@@ -27,7 +27,7 @@ const UpdateMyCraft = () => {
   const navigate = useNavigate();
 
   const handleUpdate = (data) => {
-    fetch(`http://localhost:5000/updateCraft/${_id}`, {
+    fetch(`https://artscape-gallery-server.vercel.app/updateCraft/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

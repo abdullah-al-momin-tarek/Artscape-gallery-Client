@@ -41,7 +41,7 @@ const AddCraft = () => {
       photoURL,
     };
 
-    fetch("http://localhost:5000/craft", {
+    fetch("https://artscape-gallery-server.vercel.app/craft", {
       method: "POST",
       headers: {
         "content-type": "application/json",

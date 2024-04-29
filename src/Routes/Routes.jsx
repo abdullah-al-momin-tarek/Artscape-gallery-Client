@@ -21,7 +21,8 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/allCraft"),
+        loader: () =>
+          fetch("https://artscape-gallery-server.vercel.app/allCraft"),
       },
       {
         path: "/login",
@@ -34,7 +35,8 @@ const router = createBrowserRouter([
       {
         path: "/allCraft",
         element: <AllCraft />,
-        loader: () => fetch("http://localhost:5000/allCraft"),
+        loader: () =>
+          fetch("https://artscape-gallery-server.vercel.app/allCraft"),
       },
       {
         path: "/addCraft",
@@ -52,7 +54,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/myCraft/${params.email}`),
+          fetch(
+            `https://artscape-gallery-server.vercel.app/myCraft/${params.email}`
+          ),
       },
       {
         path: "/craftDetails/:id",
@@ -62,7 +66,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/craftDetails/${params.id}`),
+          fetch(
+            `https://artscape-gallery-server.vercel.app/craftDetails/${params.id}`
+          ),
       },
       {
         path: "/updateMyCraft/:id",
@@ -72,7 +78,9 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/craftDetails/${params.id}`),
+          fetch(
+            `https://artscape-gallery-server.vercel.app/craftDetails/${params.id}`
+          ),
       },
       {
         path: "/subCategoryItem/:subcategory_name",
@@ -83,7 +91,7 @@ const router = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/categoryCraft/${params.subcategory_name}`
+            `https://artscape-gallery-server.vercel.app/categoryCraft/${params.subcategory_name}`
           ),
       },
     ],
