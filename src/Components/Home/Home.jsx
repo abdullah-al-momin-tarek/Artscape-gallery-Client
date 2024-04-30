@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import CraftCard from "../CraftCard/CraftCard";
+import Accordian from "./Accordian";
 import Banner from "./Banner";
 import CategoryCard from "./CategoryCard";
 
@@ -113,6 +114,13 @@ const Home = () => {
         {categoryCard.map((card) => (
           <CategoryCard key={card._id} card={card}></CategoryCard>
         ))}
+      </div>
+
+      <div className="my-12">
+        <h2 className="text-3xl font-bold text-center mb-6">
+          Here is some common question and answer
+        </h2>
+        <Accordian></Accordian>
       </div>
 
       {/* Get in touch */}
