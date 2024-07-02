@@ -4,16 +4,16 @@ Category Name: Painting and Drawing
 
 ## Installation
 Follow these steps to set up the project locally:
-1. Clone the repository:
+1. **Clone the repository:**
   	git clone https://github.com/Shikder-Tarek-15/Artscape-gallery-Client.git
 
-2. Navigate to the project directory:
+2.** Navigate to the project directory:**
   cd Artscape-gallery-Client
 
-3. Install the dependencies:
+3. **Install the dependencies:**
   npm install
 
-4. Start the development server:
+4. **Start the development server:**
   npm run dev
 
 ## Server Side
