@@ -16,7 +16,7 @@ Follow these steps to set up the project locally:
 4. Start the development server:
   npm run dev
 
-##Server Side
+## Server Side
 [Click Here](https://github.com/Shikder-Tarek-15/Artscape-gallery-server)
 
    
