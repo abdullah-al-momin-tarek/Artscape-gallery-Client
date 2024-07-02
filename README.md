@@ -1,5 +1,3 @@
-[Artscape Gallery](https://artscape-gallery.web.app/)
-
 
 ## Project Overview
 Artscape Gallery is an online platform for buying and selling Art & Craft items. It eliminates the hassle of finding customers or shops in physical markets, making it easy for users to trade their creative works from anywhere.
@@ -21,6 +19,9 @@ Follow these steps to set up the project locally:
 ## Server Side
 [Click Here](https://github.com/Shikder-Tarek-15/Artscape-gallery-server)
 
+
+## Live Link
+[Artscape Gallery](https://artscape-gallery.web.app/)
    
 
 ## Feature
